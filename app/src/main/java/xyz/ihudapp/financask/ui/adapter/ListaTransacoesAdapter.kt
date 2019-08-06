@@ -7,8 +7,10 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import kotlinx.android.synthetic.main.transacao_item.view.*
 import xyz.ihudapp.financask.R
+import xyz.ihudapp.financask.extension.formataParaBrasileiro
 import xyz.ihudapp.financask.model.Transacao
 import java.text.SimpleDateFormat
+import java.util.*
 
 class ListaTransacoesAdapter(
     transacoes: List<Transacao>,
@@ -27,12 +29,7 @@ class ListaTransacoesAdapter(
 
         viewCriada.transacao_valor.text = transacao.valor.toString()
         viewCriada.transacao_categoria.text = transacao.categoria
-
-
-        val formatoBrasileiro = "dd/MM/yyyy"
-        val format = SimpleDateFormat(formatoBrasileiro)
-        val dataFormatada = format.format(transacao.data.time)
-        viewCriada.transacao_data.text = dataFormatada
+        viewCriada.transacao_data.text = transacao.data.formataParaBrasileiro()
 
         return viewCriada
     }
