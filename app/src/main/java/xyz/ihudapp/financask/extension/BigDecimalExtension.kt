@@ -9,8 +9,6 @@ fun BigDecimal.formataParaBrasileiro() : String {
     val formatoBrasileiro = DecimalFormat
         .getCurrencyInstance(Locale("pt", "br"))
 
-    var moedaFormatada = formatoBrasileiro.format(this).replace("R$", "R$ ")
-
-    return moedaFormatada
+    return formatoBrasileiro.format(this).replace("R$", "R$ ")
 
 }
