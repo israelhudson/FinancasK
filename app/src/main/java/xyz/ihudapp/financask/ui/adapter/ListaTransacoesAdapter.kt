@@ -6,14 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import kotlinx.android.synthetic.main.form_transacao.view.*
 import kotlinx.android.synthetic.main.transacao_item.view.*
 import xyz.ihudapp.financask.R
 import xyz.ihudapp.financask.extension.formataParaBrasileiro
 import xyz.ihudapp.financask.model.Tipo
 import xyz.ihudapp.financask.model.Transacao
-import java.text.SimpleDateFormat
-import java.util.*
 
 class ListaTransacoesAdapter(
     transacoes: List<Transacao>,
@@ -44,12 +41,13 @@ class ListaTransacoesAdapter(
             viewCriada.transacao_icone.setBackgroundResource(R.drawable.icone_transacao_item_despesa)
         }
 
-        viewCriada.transacao_valor.text = transacao.valor.toString()
+        viewCriada.transacao_valor.text = transacao.valor.formataParaBrasileiro()
         viewCriada.transacao_categoria.text = transacao.categoria
         viewCriada.transacao_data.text = transacao.data.formataParaBrasileiro()
 
         return viewCriada
     }
+
 
     override fun getItem(posicao: Int): Transacao {
         return transacoes[posicao]
