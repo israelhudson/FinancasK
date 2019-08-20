@@ -3,6 +3,7 @@ package xyz.ihudapp.financask.ui.activity
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_lista_transacoes.*
 import xyz.ihudapp.financask.R
 import xyz.ihudapp.financask.model.Tipo
@@ -21,11 +22,15 @@ class ListaTransacoesActivity : AppCompatActivity() {
 
         val transacoes: List<Transacao> = transacoesDeExemplo()
 
-
         configuraResumo(transacoes)
 
-
         configuraLista(transacoes)
+
+        lista_transacoes_adiciona_receita
+            .setOnClickListener {
+                Toast.makeText(this,
+                    "clique de receita", Toast.LENGTH_LONG).show()
+            }
     }
 
     private fun configuraResumo(transacoes: List<Transacao>) {
