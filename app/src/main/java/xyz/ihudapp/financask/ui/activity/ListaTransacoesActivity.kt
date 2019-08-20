@@ -45,17 +45,17 @@ class ListaTransacoesActivity : AppCompatActivity() {
         return listOf(
             Transacao(
                 categoria = "Almoço de final de semana",
-                tipo = Tipo.DESPESA, data = Calendar.getInstance(), valor = BigDecimal(20.5)
+                tipo = Tipo.DESPESA, data = Calendar.getInstance(), valor = BigDecimal(100.0)
             ),
             Transacao(
                 valor = BigDecimal(100.0), tipo = Tipo.RECEITA,
                 categoria = "Economia"
             ),
             Transacao(
-                valor = BigDecimal(200.0), tipo = Tipo.DESPESA
+                valor = BigDecimal(100.0), tipo = Tipo.DESPESA
             ),
             Transacao(
-                valor = BigDecimal(500.0),
+                valor = BigDecimal(200.0),
                 categoria = "Prêmio",
                 tipo = Tipo.RECEITA
             )
